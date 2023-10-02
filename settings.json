@@ -1,0 +1,60 @@
+{
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmDelete": false,
+    "liveServer.settings.donotShowInfoMsg": true,
+    "editor.minimap.enabled": false,
+    "workbench.productIconTheme": "el-vsc-v1-icons",
+    "files.associations": {
+        "*.scss": "sass"
+    },
+    "[sass]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[css]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+    },
+    // "editor.guides.bracketPairs": true,
+    // "editor.bracketPairColorization.enabled": true,
+    // "editor.guides.highlightActiveIndentation": true,
+    "workbench.colorCustomizations": {
+        "window.activeBorder": "#474747",
+        "menu.background": "#2b2a2a",
+        "activityBar.border": "#474747",
+        "scrollbarSlider.background": "#474747",
+        "scrollbarSlider.hoverBackground": "#474747",
+        "scrollbarSlider.activeBackground": "#474747",
+        "sideBar.border": "#474747",
+        "editor.findMatchHighlightBackground": "#474747",
+        "editor.lineHighlightBackground": "#363535"
+        // "editor.selectionBackground": "#757272"
+    },
+    "editor.scrollbar.verticalScrollbarSize": 20,
+    "editor.scrollbar.horizontalScrollbarSize": 20,
+    "prettier.tabWidth": 4,
+    "workbench.colorTheme": "City Lights",
+    "editor.mouseWheelZoom": true,
+    "workbench.editor.enablePreview": false,
+    "window.zoomLevel": 2,
+    "workbench.layoutControl.enabled": false,
+    "window.commandCenter": true,
+    "terminal.integrated.enableMultiLinePasteWarning": false,
+    "workbench.tree.indent": 20,
+    "editor.matchBrackets": false,
+    "workbench.iconTheme": "material-icon-theme",
+    "window.menuBarVisibility": "compact",
+    "workbench.startupEditor": "none",
+    "editor.linkedEditing": true,
+    "editor.accessibilitySupport": "on"
+}
