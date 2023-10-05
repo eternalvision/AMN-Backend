@@ -11,6 +11,7 @@ const {
     getAllWithText,
     updateAnotherUserPassword,
     deleteAnotherUser,
+    getUserByUsername,
 } = require("./userControllers");
 
 module.exports = {
@@ -26,4 +27,5 @@ module.exports = {
     getAllWithText,
     updateAnotherUserPassword,
     deleteAnotherUser,
+    getUserByUsername,
 };

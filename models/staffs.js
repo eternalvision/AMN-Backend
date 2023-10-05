@@ -34,9 +34,9 @@ const joiStaffSchema = Joi.object({
 });
 
 const joiStaffEditSchema = Joi.object({
-    gross_wages: Joi.string(),
-    total_deductions: Joi.string(),
-    compensation: Joi.string(),
+    gross_wages: Joi.string().allow(""),
+    total_deductions: Joi.string().allow(""),
+    compensation: Joi.string().allow(""),
 });
 
 const Staff = model("staff", staffSchema);

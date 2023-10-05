@@ -44,6 +44,12 @@ router.get("/profiles", auth, ctrlWrapper(ctrl.getAllUsers));
 
 router.get("/profiles/:workerId", auth, ctrlWrapper(ctrl.getAnotherUser));
 
+router.get(
+    "/profiles/username/:username",
+    auth,
+    ctrlWrapper(ctrl.getUserByUsername)
+);
+
 // router.put(
 //     "/profiles/update/password/:workerId",
 //     auth,

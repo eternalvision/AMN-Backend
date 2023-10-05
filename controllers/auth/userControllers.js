@@ -248,6 +248,31 @@ const getAllUsers = async (req, res, next) => {
     }
 };
 
+const getUserByUsername = async (req, res, next) => {
+    try {
+        const { username } = req.params;
+        const user = await findByUsername(username);
+
+        if (!user) {
+            return SendDataResponse({
+                res: res,
+                code: 404,
+                processResponse: "UserNotFound",
+            });
+        }
+
+        return SendDataResponse({
+            res: res,
+            code: 200,
+            processResponse: "Success",
+            data: user,
+        });
+    } catch (error) {
+        console.log(error);
+        next(error);
+    }
+};
+
 const logout = async (req, res, next) => {
     try {
         const _id = req.user;
@@ -315,4 +340,5 @@ module.exports = {
     updateUserPassword,
     updateUserFinanceInfo,
     deleteAnotherUser,
+    getUserByUsername,
 };
