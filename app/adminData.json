@@ -1,0 +1,12 @@
+{
+    "username": "admin",
+    "name": "Admin",
+    "surname": "Admin",
+    "password": "Aa@1Bb@2",
+    "phoneNumber": "+1234567890",
+    "email": "admin@example.com",
+    "profileType": "admin",
+    "theme": "light",
+    "language": "cz",
+    "linkToPhoto": "https://i.ibb.co/bRLH3S4/istockphoto-1276619045-612x612.jpg"
+}
