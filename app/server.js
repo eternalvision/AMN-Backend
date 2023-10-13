@@ -11,12 +11,20 @@ const { PORT = 1594, DB_HOST } = process.env;
 mongoose
     .connect(DB_HOST)
     .then(async () => {
-        const users = await UserRepositories.findAllUsers();
-
-        if (users.length === 0) {
-            console.log("No users found, creating admin...");
-            await UserRepositories.createUser(adminData, adminData.password);
-            console.log("Admin user created");
+        try {
+            const users = await UserRepositories.findAllUsers();
+            if (users.length === 0) {
+                console.log("No users found, creating admin...");
+                await UserRepositories.createUser(
+                    adminData,
+                    adminData.password
+                );
+                console.log(
+                    `Admin created, login: ${adminData.username}, password: ${adminData.password}`
+                );
+            }
+        } catch (error) {
+            throw new Error(error);
         }
 
         console.log(`Server running on port ${PORT}`);

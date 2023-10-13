@@ -13,7 +13,7 @@
         "url": "git+https://github.com/eternalvision/AMN-Backend.git"
     },
     "keywords": [],
-    "author": "",
+    "author": "Alexandr Priadchenko",
     "license": "ISC",
     "bugs": {
         "url": "https://github.com/eternalvision/AMN-Backend/issues"
@@ -49,7 +49,6 @@
         "xlsx": "^0.18.5"
     },
     "devDependencies": {
-        "eslint": "^7.32.0",
         "eslint-config-standard": "^16.0.3",
         "eslint-plugin-import": "^2.26.0",
         "eslint-plugin-node": "^11.1.0",
