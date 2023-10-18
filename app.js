@@ -6,6 +6,7 @@ require("dotenv").config();
 
 const authRouter = require("./routes/api/auth");
 const staffRouter = require("./routes/api/staff");
+const defaultRouter = require("./routes/api/default");
 
 const app = express();
 
@@ -18,6 +19,7 @@ app.use(express.static("public"));
 
 app.use("/api/auth", authRouter);
 app.use("/api/staff", staffRouter);
+app.use("/api/", defaultRouter);
 
 app.use((req, res) => {
     res.status(HttpCode.NOT_FOUND).json({
