@@ -20,7 +20,7 @@ mongoose
                     adminData.password
                 );
                 console.log(
-                    `Admin created, login: ${adminData.username}, password: ${adminData.password}`
+                    `Admin created, login: ${adminData.email}, password: ${adminData.password}`
                 );
             }
         } catch (error) {

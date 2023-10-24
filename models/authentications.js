@@ -97,33 +97,17 @@ const joiSignUpSchema = Joi.object({
     surname: Joi.string().min(3).max(20).required(),
     email: Joi.string().email().max(256).required(),
     phoneNumber: Joi.string().max(15).required(),
-    password: joiPassword
-        .string()
-        .min(8)
-        .minOfSpecialCharacters(2)
-        .minOfLowercase(2)
-        .minOfUppercase(2)
-        .minOfNumeric(2)
-        .noWhiteSpaces()
-        .required(),
+    password: joiPassword.string().min(8).required(),
     asmisToken: Joi.string(),
 });
 
 const joiLogInSchema = Joi.object({
-    username: Joi.string().required(),
+    email: Joi.string().email().required(),
     password: Joi.string().required(),
 });
 
 const joiUpdatePasswordSchema = Joi.object({
-    password: joiPassword
-        .string()
-        .min(8)
-        .minOfSpecialCharacters(2)
-        .minOfLowercase(2)
-        .minOfUppercase(2)
-        .minOfNumeric(2)
-        .noWhiteSpaces()
-        .required(),
+    password: joiPassword.string().min(8).required(),
 });
 
 const joiUpdateSchema = Joi.object({

@@ -75,7 +75,7 @@ const register = async (req, res, next) => {
 
 const login = async (req, res, next) => {
     try {
-        const user = await findByUsername(req.body.username);
+        const user = await findByEmail(req.body.email);
         const isValidPassword = await user.comparePassword(req.body.password);
         if (!user || !isValidPassword) {
             return SendDataResponse({
@@ -84,13 +84,13 @@ const login = async (req, res, next) => {
                 processResponse: "Unauthorized",
             });
         }
-        const { name, surname, workerId, phoneNumber, email } = user;
+        const { name, surname, workerId, phoneNumber, email, username } = user;
         const payload = {
             id: user._id,
         };
         const token = jwt.sign(payload, SECRET_KEY, { expiresIn: "1d" });
         await updateToken(payload.id, token);
-        const { username } = await req.body;
+
         let data = {
             token,
             workerId: workerId,
@@ -117,7 +117,6 @@ const login = async (req, res, next) => {
             });
         }
     } catch (error) {
-        console.log(error);
         next(error);
     }
 };
@@ -132,7 +131,6 @@ const updateUserPassword = async (req, res, next) => {
             processResponse: "PasswordUpdate",
         });
     } catch (error) {
-        console.log(error);
         next(error);
     }
 };
@@ -149,7 +147,6 @@ const updateAnotherUserPassword = async (req, res, next) => {
             processResponse: "PasswordUpdate",
         });
     } catch (error) {
-        console.log(error);
         next(error);
     }
 };
@@ -173,7 +170,6 @@ const updateUserFinanceInfo = async (req, res, next) => {
             });
         }
     } catch (error) {
-        console.log(error);
         next(error);
     }
 };
@@ -197,7 +193,6 @@ const getCurrent = async (req, res, next) => {
             });
         }
     } catch (error) {
-        console.log(error);
         next(error);
     }
 };
@@ -220,7 +215,6 @@ const getAnotherUser = async (req, res, next) => {
             });
         }
     } catch (error) {
-        console.log(error);
         next(error);
     }
 };
@@ -243,7 +237,6 @@ const getAllUsers = async (req, res, next) => {
             });
         }
     } catch (error) {
-        console.log(error);
         next(error);
     }
 };
@@ -268,7 +261,6 @@ const getUserByUsername = async (req, res, next) => {
             data: user,
         });
     } catch (error) {
-        console.log(error);
         next(error);
     }
 };
@@ -279,7 +271,6 @@ const logout = async (req, res, next) => {
         await updateToken(_id, null);
         return res.status(204).json({});
     } catch (error) {
-        console.log(error);
         next(error);
     }
 };
@@ -301,7 +292,6 @@ const deleteUser = async (req, res, next) => {
             });
         }
     } catch (error) {
-        console.log(error);
         next(error);
     }
 };
@@ -323,7 +313,6 @@ const deleteAnotherUser = async (req, res, next) => {
             });
         }
     } catch (error) {
-        console.log(error);
         next(error);
     }
 };
