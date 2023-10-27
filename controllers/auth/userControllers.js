@@ -76,8 +76,15 @@ const register = async (req, res, next) => {
 const login = async (req, res, next) => {
     try {
         const user = await findByEmail(req.body.email);
+        if (!user) {
+            return SendDataResponse({
+                res: res,
+                code: 401,
+                processResponse: "Unauthorized",
+            });
+        }
         const isValidPassword = await user.comparePassword(req.body.password);
-        if (!user || !isValidPassword) {
+        if (!isValidPassword) {
             return SendDataResponse({
                 res: res,
                 code: 401,
